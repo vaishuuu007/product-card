@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>product price inc dec card</title>
+<style>
+    body {
+        background-color: white;
+    }
+    .product-card {
+        background-color: white;
+        width: 300px;
+        border-radius: 20px;
+        border: #000;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        display: block;
+        margin: 30px auto;
+        padding: 5px;
+    }
+    .bag-img {
+        height: 150px;
+        display: block;
+        margin: 10px auto;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+    .card-body {
+        margin-left: 2px;
+    }
+    .product-title {
+        font-size: 15px;
+
+    }
+    .pro-discription {
+        font-size: 10px;
+
+    }
+    .product-price {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .btn-buy {
+        background-color: black;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 20px;
+        display: block;
+        cursor: pointer;
+        margin: 10px auto;
+    }
+    .btn-quantity {
+        height: 20px;
+    cursor: pointer;
+    }
+    .quantity-text {
+        font-size: 22px;
+        margin: auto 10px;
+        align-items: center;
+    }
+    .quantity-btn-container {
+        display: flex;
+        justify-content: center;
+        
+        
+    }
+</style>
+<body>
+    <div class="product-card">
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\laptop.jpeg" class="bag-img" />
+    <div class="card-body">
+        <h1>New Released VIVO IPhone 14</h1>
+        <p class="pro-discription">
+            discription
+        </p>
+        <p class="product-price">
+            259/-
+        </p>
+        <p id="show-quantity"> 1 x 259</p>
+        <p id="show-total">Total:</p>
+        <div class="quantity-btn-container">        
+            <img src="C:\Users\shahaji waditke\Desktop\productcard\minus.png" class="btn-quantity" onclick="decrement()"/>
+            <span class="quantity-text" id="quantity-text">1</span>
+            <img src="C:\Users\shahaji waditke\Desktop\productcard\add.png" class="btn-quantity" onclick=" increment()"/>
+            </div>
+            <button type="button" class="btn-buy"> Buy Now</button>
+    </div>
+    </div>
+    <script>
+            function increment(){
+            const QuantityText = document.getElementById('quantity-text');
+            const showQuantity = document.getElementById('show-quantity');
+            const showTotal = document.getElementById('show-total');
+
+            let quantity = parseInt('QuantityText.innerText');
+            if(quantity < 10){
+        
+            }
+            else{
+                alert('you cannot add more than 10 items');
+            }
+            showQuantity.innerText = `${quantity } x 259`;
+            showTotal.innerText = Total`${quantity * 259}`;
+            }
+        function decrement(){
+            const QuantityText = document.getElementById('quantity-text');
+            const showQuantity = document.getElementById('show-quantity');
+            const showTotal = document.getElementById('show-total');
+
+            let quantity = parseInt('QuantityText.innerText');
+            if (quantity > 1){
+            }
+            else {
+                alert('you cannot add less than 1 items');
+            }
+            showQuantity.innerText = `${quantity } x 259`;
+            showTotal.innerText = Total`${quantity * 259}`;
+        }
+    </script>
+</body>
+</html>
