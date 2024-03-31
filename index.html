@@ -3,8 +3,11 @@
 <title>product price inc dec card</title>
 <style>
     body {
-        background-color: white;
+        background-color: rgb(243, 145, 235);
     }
+      .main-division{
+        display: flex;
+      }
     .product-card {
         background-color: white;
         width: 300px;
@@ -15,6 +18,7 @@
         margin: 30px auto;
         padding: 5px;
     }
+
     .bag-img {
         height: 150px;
         display: block;
@@ -22,21 +26,26 @@
         border-radius: 20px;
         padding: 10px 20px;
     }
+
     .card-body {
         margin-left: 2px;
     }
+
     .product-title {
         font-size: 15px;
 
     }
+
     .pro-discription {
         font-size: 10px;
 
     }
+
     .product-price {
         font-weight: bold;
         font-size: 20px;
     }
+
     .btn-buy {
         background-color: black;
         color: #fff;
@@ -47,73 +56,215 @@
         cursor: pointer;
         margin: 10px auto;
     }
+
     .btn-quantity {
         height: 20px;
-    cursor: pointer;
+        cursor: pointer;
     }
+
     .quantity-text {
         font-size: 22px;
         margin: auto 10px;
         align-items: center;
     }
+
     .quantity-btn-container {
         display: flex;
         justify-content: center;
-        
-        
+
     }
 </style>
+
 <body>
+    <div class="main-division">
     <div class="product-card">
-                <img src="C:\Users\shahaji waditke\Desktop\productcard\laptop.jpeg" class="bag-img" />
-    <div class="card-body">
-        <h1>New Released VIVO IPhone 14</h1>
-        <p class="pro-discription">
-            discription
-        </p>
-        <p class="product-price">
-            259/-
-        </p>
-        <p id="show-quantity"> 1 x 259</p>
-        <p id="show-total">Total:</p>
-        <div class="quantity-btn-container">        
-            <img src="C:\Users\shahaji waditke\Desktop\productcard\minus.png" class="btn-quantity" onclick="decrement()"/>
-            <span class="quantity-text" id="quantity-text">1</span>
-            <img src="C:\Users\shahaji waditke\Desktop\productcard\add.png" class="btn-quantity" onclick=" increment()"/>
+        <img src="C:\Users\shahaji waditke\Desktop\productcard\fan.jpeg" class="bag-img" />
+        <div class="card-body">
+            <h1>ACTIVA 1200 MM Upper Fan </h1>
+            <p class="pro-discription">
+            Powerful newly released fan <br/>
+            1200MM blades sweep<br/>
+            exclusive with hight flow technology.
+            </p>
+            <p class="product-price">
+               Price = 1499/-
+            </p>
+            <p id="show-quantity">Total Products: 1 x 1499</p>
+            <p id="show-total">Total:</p>
+            <div class="quantity-btn-container">
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\minus.png" class="btn-quantity"
+                    onclick="dec()" />
+                <span class="quantity-text" id="quantity-text">1</span>
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\add.png" class="btn-quantity"
+                    onclick=" inc()" />
             </div>
             <button type="button" class="btn-buy"> Buy Now</button>
+        </div>
     </div>
+
+
+    <div class="product-card">
+        <img src="C:\Users\shahaji waditke\Desktop\productcard\tfan.jpeg" class="bag-img" />
+        <div class="card-body">
+            <h1>USHA Maxx Air Ultra Table fan</h1>
+            <p class="pro-discription">
+                Color - Gloss black<br/>
+                Energy efficient BLDC technology,Regulated operated, 2+1 yr warranty.
+            </p>
+            <p class="product-price">
+               Price = 1999/-
+            </p>
+            <p id="show-quantity0">Total Products: 1 x 1999</p>
+            <p id="show-total0">Total:</p>
+            <div class="quantity-btn-container">
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\minus.png" class="btn-quantity"
+                    onclick="dec1()" />
+                <span class="quantity-text" id="quantity-text0">1</span>
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\add.png" class="btn-quantity"
+                    onclick=" inc1()" />
+            </div>
+            <button type="button" class="btn-buy"> Buy Now</button>
+        </div>
     </div>
+
+    <div class="product-card">
+        <img src="C:\Users\shahaji waditke\Desktop\productcard\cooler1.jpeg" class="bag-img" />
+        <div class="card-body">
+            <h1>IBELL 25-foot Air Conditioner </h1>
+            <p class="pro-discription">
+                Color - White<br/>
+                powerful Air throw:25 feet ,140W power| 1 Amp Current..            </p>
+            <p class="product-price">
+               Price =  1500/-
+            </p>
+            <p id="show-quantity1">Total Products: 1 x 1500</p>
+            <p id="show-total1">Total:</p>
+            <div class="quantity-btn-container">
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\minus.png" class="btn-quantity"
+                    onclick="dec2()" />
+                <span class="quantity-text" id="quantity-text1">1</span>
+                <img src="C:\Users\shahaji waditke\Desktop\productcard\add.png" class="btn-quantity"
+                    onclick=" inc2()" />
+            </div>
+            <button type="button" class="btn-buy"> Buy Now</button>
+        </div>
+    </div>
+</div>
     <script>
-            function increment(){
-            const QuantityText = document.getElementById('quantity-text');
-            const showQuantity = document.getElementById('show-quantity');
-            const showTotal = document.getElementById('show-total');
-
-            let quantity = parseInt('QuantityText.innerText');
-            if(quantity < 10){
-        
-            }
-            else{
-                alert('you cannot add more than 10 items');
-            }
-            showQuantity.innerText = `${quantity } x 259`;
-            showTotal.innerText = Total`${quantity * 259}`;
-            }
-        function decrement(){
-            const QuantityText = document.getElementById('quantity-text');
-            const showQuantity = document.getElementById('show-quantity');
-            const showTotal = document.getElementById('show-total');
-
-            let quantity = parseInt('QuantityText.innerText');
-            if (quantity > 1){
-            }
-            else {
-                alert('you cannot add less than 1 items');
-            }
-            showQuantity.innerText = `${quantity } x 259`;
-            showTotal.innerText = Total`${quantity * 259}`;
+            function inc(){
+        const quantityText=document.getElementById("quantity-text");
+         const showQuantity = document.getElementById("show-quantity");
+        const showTotal = document.getElementById("show-total");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity<20)
+        {
+        quantityText.innerText = ++quantity;
         }
+        else
+        {
+            alert("you can't add more than 20 items ")
+        }
+   showQuantity.innerText=`Total Produccts: ${quantity}×349`;
+        
+   showTotal.innerText=`Total: ${quantity*349}`;
+
+        }
+
+        function dec(){
+        const quantityText=document.getElementById("quantity-text");
+         const showQuantity = document.getElementById("show-quantity");
+        const showTotal = document.getElementById("show-total");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity>1)
+        {
+        quantityText.innerText = --quantity;
+        }
+        else
+        {
+            alert("you can't add less than 1 items ")
+        }
+   showQuantity.innerText=`Total Products: ${quantity}1499`;
+        
+   showTotal.innerText=`Total: ${quantity*1499}`;
+
+        }
+
+        function inc1(){
+        const quantityText=document.getElementById("quantity-text0");
+         const showQuantity = document.getElementById("show-quantity0");
+        const showTotal = document.getElementById("show-total0");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity<20)
+        {
+        quantityText.innerText = ++quantity;
+        }
+        else
+        {
+            alert("you can't add more than 20 items ")
+        }
+   showQuantity.innerText=`Total Produccts: ${quantity}×1999`;
+        
+   showTotal.innerText=`Total: ${quantity*1999}`;
+
+        }
+        function dec1(){
+        const quantityText=document.getElementById("quantity-text0");
+         const showQuantity = document.getElementById("show-quantity0");
+        const showTotal = document.getElementById("show-total0");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity>1)
+        {
+        quantityText.innerText = --quantity;
+        }
+        else
+        {
+            alert("you can't add less than 1 items ")
+        }
+   showQuantity.innerText=`Total Products: ${quantity}×1999`;
+        
+   showTotal.innerText=`Total: ${quantity*1999}`;
+
+        }
+
+
+        function inc2(){
+        const quantityText=document.getElementById("quantity-text1");
+         const showQuantity = document.getElementById("show-quantity1");
+        const showTotal = document.getElementById("show-total1");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity<20)
+        {
+        quantityText.innerText = ++quantity;
+        }
+        else
+        {
+            alert("you can't add more than 20 items ")
+        }
+   showQuantity.innerText=`Total Produccts: ${quantity}×1500`;
+        
+   showTotal.innerText=`Total: ${quantity*1500}`;
+
+        }
+        function dec2(){
+        const quantityText=document.getElementById("quantity-text1");
+         const showQuantity = document.getElementById("show-quantity1");
+        const showTotal = document.getElementById("show-total1");
+        let quantity=parseInt(quantityText.innerText);
+        if(quantity>1)
+        {
+        quantityText.innerText = --quantity;
+        }
+        else
+        {
+            alert("you can't add less than 1 items ")
+        }
+   showQuantity.innerText=`Total Products: ${quantity}×1500`;
+        
+   showTotal.innerText=`Total: ${quantity*1500}`;
+
+        }
+
     </script>
 </body>
+
 </html>
